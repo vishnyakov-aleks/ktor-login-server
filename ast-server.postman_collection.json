@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "acbbbf46-6476-4b90-b0d5-fee67933d248",
+		"name": "ast-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"vishnyakov.aleks@yan12.ru\", \"password\":\"123asd\"}"
+				},
+				"url": {
+					"raw": "http://localhost/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjoiJGFwcjEkMTU1NTc5NTAkSS50c1dSWWVRZ0ZXWHFLbWxTbjVpLyIsImlzcyI6IjMifQ.ahm5Moeve3us_1qB8-R6yhqyhXDB1cGUi7Pw74Bihws",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"vishnyakov.aleks@yan12.ru\", \"password\":\"1433333e2\"}"
+				},
+				"url": {
+					"raw": "http://localhost/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh-token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjoiJGFwcjEkMTU1NTc5NDQkazhQZWIyVVpjY0czTzRFRy5LbmFuLyIsImlzcyI6IjMifQ.5h04WLv-QH66HhfiwhW4n_Cjdnb2emxu2oheEiNhHkE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"refreshToken\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjoiJGFwcjEkMTU1NTgyNDAkcEJyWUxWWnpRRktidlFtZTdjbXNOLiIsImlzcyI6IjMiLCJlbmNwIjoiZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SmxibU5RWVhOemQyOXlaQ0k2SWpFeU0yRnpaQ0o5LlUwcW9PLUtwdVR5eWVfMFQ2Qk81cjVOZVlZQnBYYnNITl91OG9USmZyYzAiLCJleHAiOjE1NjM2MDAwNjN9.kCHIekPTrf-BCDF5vcZPwRWbFX4A5LeZJroJSmyD5HE\"}"
+				},
+				"url": {
+					"raw": "http://localhost/auth/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resetpass/send-code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjoiJGFwcjEkMTU1NTc5NDQkazhQZWIyVVpjY0czTzRFRy5LbmFuLyIsImlzcyI6IjMifQ.5h04WLv-QH66HhfiwhW4n_Cjdnb2emxu2oheEiNhHkE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"vishnyakov.aleks@yan12.ru\"}"
+				},
+				"url": {
+					"raw": "http://localhost/auth/resetpass/send-code",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"resetpass",
+						"send-code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resetpass/set",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjoiJGFwcjEkMTU1NTc5NDQkazhQZWIyVVpjY0czTzRFRy5LbmFuLyIsImlzcyI6IjMifQ.5h04WLv-QH66HhfiwhW4n_Cjdnb2emxu2oheEiNhHkE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"code\":\"8C4627Y\", \"newPassword\":\"1433333e2\"}"
+				},
+				"url": {
+					"raw": "http://localhost/auth/resetpass/set",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"auth",
+						"resetpass",
+						"set"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uIjoiJGFwcjEkMTU1NTc5NTAkSS50c1dSWWVRZ0ZXWHFLbWxTbjVpLyIsImlzcyI6IjMifQ.ahm5Moeve3us_1qB8-R6yhqyhXDB1cGUi7Pw74Bihws",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"vishnyakov.aleks@yan1.ru\", \"password\":\"123asd\"}"
+				},
+				"url": {
+					"raw": "http://localhost/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
